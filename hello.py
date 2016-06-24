@@ -367,7 +367,29 @@ print(fact(1), fact(5), fact(100))
 #在计算机中，函数调用是通过栈（stack）这种数据结构实现的，每当进入一个函数调用，栈就会加一层栈帧，每当函数返回，栈就会减一层栈帧。由于栈的大小不是无限的，所以，递归调用的次数过多，会导致栈溢出。可以试试fact(1000)：
 #print(fact(1000))
 
+#尾递归
+def fact(n):
+    return fact_iter(n, 1)
 
+def fact_iter(num, product):
+    if num == 1:
+        return product
+    return fact_iter(num - 1, num * product)
 
+print(fact(5))
+
+#http://www.cnblogs.com/yanlingyin/archive/2011/11/14/2247594.html
+def move(n, a, b, c):
+    if n == 1:
+        print(a, '---> ', c)
+        return
+    else:
+        move(n-1, a, c, b)
+        print(a, '---> ', c)
+        move(n-1, b, a, c)
+        return
+print(move(3, 'A', 'B', 'C'))
+        
+        
 
 
