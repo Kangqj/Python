@@ -420,6 +420,19 @@ print(L[:10:2])#前10个数，每两个取一个
 print(L[::5])#所有数，每5个取一个
 print(L[:])
 
+#迭代
+for i, value in enumerate(['A', 'B', 'C'], 2):
+    print(i, value)
+
+#列表生成式
+print(list(range(1, 11)))
+print([x * x for x in range(1, 11)])#[1x1, 2x2, 3x3, ..., 10x10]
+print([x * x for x in range(1, 11) if x % 2 == 0])
+print([m + n for m in 'ABC' for n in 'XYZ'])
+
+import os # 导入os模块，模块的概念后面讲到
+print([d for d in os.listdir('.')]) # os.listdir可以列出文件和目录
+
 s = 'ABCDEF'
 print(s[:3])
 print(s[::2])
