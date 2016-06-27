@@ -54,6 +54,7 @@ print('格式化字符2 %2d %02d' % (2,2))
 print('格式化字符3 %.2f' % 3.1415926)
 print('格式化字符4 %s  %s' % (3.1415926, True))
 print('格式化字符4 %s  %s %%' % (3.1415926, True))#%%转义为%
+print('格式化字符5 %d' % 10)
 
 #list和tuple 列表和元组
 classmates = ['a', 100, True]
@@ -379,17 +380,47 @@ def fact_iter(num, product):
 print(fact(5))
 
 #http://www.cnblogs.com/yanlingyin/archive/2011/11/14/2247594.html
+
+print('---汉诺塔的递归算法---')
+
+i = 0
 def move(n, a, b, c):
+    print('---%d---%d' % (i, n))
     if n == 1:
-        print(a, '---> ', c)
-        return
+        global i
+        i = i + 1
+        print('第%d步：将%d号盘子 从%s移动到%s' % (i, n, a, c))
     else:
-        move(n-1, a, c, b)
-        print(a, '---> ', c)
-        move(n-1, b, a, c)
-        return
+        move(n-1, a, c, b)#先讲A上n-1个盘子借助C移动到B上面
+        global i
+        i = i + 1
+        print('第%d步：将%d号盘子 从%s移动到%s' % (i, n, a, c))
+        move(n-1, b, a, c)#再将B上n-1个盘子借助A移动到C上面
+
 print(move(3, 'A', 'B', 'C'))
         
-        
+#高级特性
+L = []
+n = 1
+while n <= 99:
+    L.append(n)        
+    n = n + 2
+print(L)
 
+#切片
+r = []
+n = 3
+for i in range(n):
+    r.append(L[i])
+print(r)
+
+print(L[0:3])
+print(L[-10:])
+print(L[:10:2])#前10个数，每两个取一个
+print(L[::5])#所有数，每5个取一个
+print(L[:])
+
+s = 'ABCDEF'
+print(s[:3])
+print(s[::2])
 
