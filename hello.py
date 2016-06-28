@@ -481,3 +481,45 @@ s = 'ABCDEF'
 print(s[:3])
 print(s[::2])
 
+#多层表达式
+def function(ls):
+	r = []
+	for x in ls:
+		if int(x / 100) == x % 10:
+			r.append(x)
+	return r
+
+l = list(range(100, 1000))
+
+# print(function(l))
+
+print([x for x in range(100, 1000) if int(x/100) == x % 10])
+
+#生成器 在Python中，这种一边循环一边计算的机制，称为生成器：generator。
+g = (x for x in range(4))
+# print('%d \n %d \n %d' % (next(g), next(g), next(g)))
+
+for n in g:
+	print(n)
+def fib(max):
+	n, a, b = 0, 0, 1
+	while n < max:
+		a, b = b, a + b
+		n = n + 1
+	return 'done'
+print(fib(6))
+
+def odd():
+	print('step 1')
+	yield 1
+	print('step 2')
+	yield 3
+	print('step 3')
+	yield 5
+
+o = odd()
+next(o)
+next(o)
+next(o)
+# next(o)
+
