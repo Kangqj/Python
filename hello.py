@@ -403,4 +403,48 @@ print([m + n for m in 'ABC' for n in 'XYZ'])
 import os # 导入os模块，模块的概念后面讲到
 print([d for d in os.listdir('.')]) # os.listdir可以列出文件和目录
 
+print([m * (m+1) for m in range(1, 100, 2)])
+#print(list(range(1, 100, 2)))
+#print(list(range(2, 101, 2)))
+
+#复杂表达式
+
+def create(name, score):
+	if score < 60:
+		return '<tr><td>%s</td><td style="color:red" >%s</td></tr>' % (name, score)
+	else:
+		return '<tr><td>%s</td><td>%s</td></tr>' % (name, score)
+
+
+d = { 'Adam': 95, 'Lisa': 85, 'Bart': 59 }
+tds = ['<tr><td>%s</td><td>%s</td></tr>' % (name, score) for name, score in d.items()]
+print('<table border="1">')
+print('<tr><th>Name</th><th>Score</th><tr>')
+print('\n'.join(tds))
+print('</table>')
+
+tds = [create(name, score) for name, score in d.items()]
+print('<table border="1">')
+print('<tr><th>Name</th><th>Score</th><tr>')
+print('\n'.join(tds))
+print('</table>')
+
+#条件过滤
+def toUppers1(l):
+	r = []
+	for x in l:
+		if isinstance(x, str):
+			x = x.upper()
+		r.append(x)
+	return r
+
+L = ['Hello', 'world', 101]
+print(toUppers1(L))
+
+def toUppers(L):
+    return [x.upper() for x in L if isinstance(x,str)]
+
+print(toUppers(['Hello', 'world', 101]))
+
+
 
