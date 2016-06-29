@@ -501,13 +501,6 @@ g = (x for x in range(4))
 
 for n in g:
 	print(n)
-def fib(max):
-	n, a, b = 0, 0, 1
-	while n < max:
-		a, b = b, a + b
-		n = n + 1
-	return 'done'
-print(fib(6))
 
 def odd():
 	print('step 1')
@@ -522,4 +515,47 @@ next(o)
 next(o)
 next(o)
 # next(o)
+
+def fib(max):
+	n, a, b = 0, 0, 1
+	while n < max:
+		print(b)
+		a, b = b, a + b
+		n = n + 1
+	return 'done'
+
+print(fib(6))
+
+for n in fib(6):
+	print(n)
+
+
+# g = fib(6)
+# while True:
+# 	try:
+# 		x = next(g)
+# 		print('g:', x)
+# 	except StopIteration as e:
+# 		print('Generator reture value:', e.value)
+# 		break
+
+def triangles():
+	N = [1]
+	while True:
+		yield N #遇到yield就中断，下次又继续执行
+		N.append(0)
+		N = [N[i-1] + N[i] for i in range(len(N))]
+
+i = 0
+for x in triangles():
+	if i < 10:
+		print(x);
+	else:
+		break
+	i = i + 1
+
+#迭代器
+
+
+
 
