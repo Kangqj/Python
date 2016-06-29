@@ -560,7 +560,7 @@ for x in triangles():
 from collections import Iterable
 from collections import Iterator
 
-print(isinstance((), Iterable))
+print('可迭代对象', isinstance((), Iterable))
 print(isinstance([], Iterable))
 print(isinstance({}, Iterable))
 print(isinstance('', Iterable))
@@ -577,4 +577,14 @@ print(isinstance('', Iterator))
 print('可迭代对象转换为迭代器', isinstance(iter([]), Iterator))
 print(isinstance(iter({}), Iterator))
 print(isinstance(iter(''), Iterator))
+
+it = iter([1, 2, 3, 4, 5])
+while True:
+    try:
+        x = next(it)
+        print(x)
+    except StopIteration:
+        print('stop')
+        break
+
 
