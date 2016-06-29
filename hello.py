@@ -192,6 +192,8 @@ print(s | x)
 #s = set([1, [1, 2, 3], 3, 2, 3, 1])
 #print(s)
 
+# set(), list[], dict{}
+
 a = ['c', 'b', 'a']
 print(a)
 a.sort()
@@ -555,7 +557,24 @@ for x in triangles():
 	i = i + 1
 
 #迭代器
+from collections import Iterable
+from collections import Iterator
+
+print(isinstance((), Iterable))
+print(isinstance([], Iterable))
+print(isinstance({}, Iterable))
+print(isinstance('', Iterable))
+print(isinstance((x for x in range(10)), Iterable))
+print(isinstance(100, Iterable))
+
+print('迭代器', isinstance((x for x in range(10)), Iterator))
+print(isinstance((), Iterator))
+print(isinstance([], Iterator))
+print(isinstance({}, Iterator))
+print(isinstance('', Iterator))
 
 
-
+print('可迭代对象转换为迭代器', isinstance(iter([]), Iterator))
+print(isinstance(iter({}), Iterator))
+print(isinstance(iter(''), Iterator))
 
