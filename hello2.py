@@ -101,5 +101,79 @@ def is_odd(n):
 	return n % 2 == 1
 
 print(list(filter(is_odd, [1, 2, 3, 4, 5, 6, 9 ,10, 15])))
+#计算素数的一个方法是埃氏筛法
+def _odd_iter():
+	n = 1
+	while True:
+		n = n + 2
+		yield n
 
+def _not_divisible(n):
+	return lambda x: x % n > 0
 
+def primes():
+	yield 2
+	it = _odd_iter()
+	while True:
+		n = next(it)
+		yield n
+		it = filter(_not_divisible(n), it)
+
+for n in primes():
+	if n < 10:
+		print(n)
+	else:
+		break
+
+#回数是指从左向右读和从右向左读都是一样的数
+def is_palindrome(n):
+	s = str(n)
+	if len(s) == 1:
+		return n
+	else:
+		r = True
+		i = 0
+		for x in s:
+			a = s[i];
+			b = s[len(s) - 1 - i]
+			i = i + 1
+			if a != b:
+				r = False
+		if r == True:
+			return n
+
+output = filter(is_palindrome, range(1, 1000))
+print(list(output))
+
+s = 'ABCDEF'
+print(s[::-1])
+
+def hunstools(x):
+    return str(x) == str(x)[::-1]
+
+outlist = filter(hunstools,range(1,1000))
+print(list(outlist))
+
+print(str(12321), str(12321)[::-1])
+print(str(12321) == str(12321)[::-1])
+
+#sorted 排序算法
+print(sorted([1, 9, 5, 7, -8, 3, 2, 6, ]))
+print(sorted([1, 9, 5, 7, -8, 3, 2, 6, ], key = abs))
+print(sorted(['bob', 'about', 'Zoo', 'Credit']))
+print(sorted(['bob', 'about', 'Zoo', 'Credit'], key = str.lower))
+print(sorted(['bob', 'about', 'Zoo', 'Credit'], key = str.lower, reverse = True))
+
+L = [('Bob', 75), ('Adam', 92), ('Bart', 66), ('Lisa', 88)]
+
+def by_name(t):
+	return t[0]
+
+L1 = sorted(L, key=by_name)
+print(L1)
+
+def by_score(t):
+    return t[1]
+
+L2 = sorted(L, key=by_score, reverse = True)
+print(L2)
