@@ -315,7 +315,7 @@ date()
 def date():
 	print('2016-07-11')
 date()
-	
+
 #偏函数
 
 print(int('12345', base=8), '\n', int('12345', 16))
@@ -325,6 +325,14 @@ def int2(x, base=2):
 print(int2('1000000'))
 
 int2 = functools.partial(int, base=2)
-print(int2('1000000'))
+print(int2('10010'))
 
+#*args是非关键字参数，用于元组，**kw是关键字参数，用于字典
+
+kw = {'base': 2}
+print(int('10010', **kw))
+
+max2 = functools.partial(max, 10)
+
+print(max2(5, 6, 7))
 
