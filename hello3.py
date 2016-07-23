@@ -22,10 +22,30 @@ def test():
 if  __name__ == 'main':
 	test()
 
-#安装第三方模块
-from PIL import Image
-im = Image.open('/Users/mac/Python/test.JPEG')
-print(im.format, im.size, im.module)
-im.thumbnail((200, 100))
-im.save('thumb.JPEG', 'JPEG')
+#面向对象
+class Student(object):
+	"""docstring for Student"""
+	def __init__(self, name, score):
+		self.name = name
+		self.score = score
+
+	def print_score(self):
+		print('%s: %s' % (self.name, self.score))
+
+bart = Student('bart', 59)
+lisa = Student('lisa', 87)
+bart.print_score()
+lisa.print_score()
+
+#类和实例
+#访问限制
+#继承和多态
+class Animal(object):
+	"""docstring for Animal"""
+	def run(self):
+		print('Animal is running...')
+
+class Dog(Animal):
+	
+
 
