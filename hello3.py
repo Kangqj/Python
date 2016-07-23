@@ -22,7 +22,6 @@ def test():
 if  __name__ == 'main':
 	test()
 
-<<<<<<< HEAD
 #面向对象
 class Student(object):
 	"""docstring for Student"""
@@ -45,18 +44,14 @@ class Animal(object):
 	"""docstring for Animal"""
 	def run(self):
 		print('Animal is running...')
-
-class Dog(Animal):
 	
 
-=======
 #安装第三方模块  pip3 install Pillow
-from PIL import Image
-im = Image.open('/Users/kangqijun/Python/test.png')
-print(im.format, im.size, im.mode)
-im.thumbnail((200, 100))
-im.save('thumb.JPEG', 'JPEG')
->>>>>>> 8900fe823b380390d24d14dc7dc8c403726d2278
+# from PIL import Image
+# im = Image.open('/Users/kangqijun/Python/test.png')
+# print(im.format, im.size, im.mode)
+# im.thumbnail((200, 100))
+# im.save('thumb.JPEG', 'JPEG')
 
 #获取对象信息
 import types
