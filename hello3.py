@@ -191,13 +191,3 @@ print(s.resolution)
 
 #多重继承
 
-
-		
-
-		
-
-
-
-
-
-
