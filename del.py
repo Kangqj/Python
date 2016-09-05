@@ -11,3 +11,5 @@ import os
 # 递归删除空目录： 
 # os.removedirs()
 
+os.listdir('/Users/kangqijun')
+
