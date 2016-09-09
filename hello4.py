@@ -110,11 +110,12 @@ for x in os.listdir('/Users/kangqijun'):
 		print(os.path.abspath(x));
 
 def scandir(path):
+	print('---' + path)
 	if os.path.isdir(path):
 		print('dir: ' + path)
 		for x in os.listdir(path):
 			scandir(x)
-	else:
+	elif os.path.isfile(path):
 		print('file:' + path)
 	
 
