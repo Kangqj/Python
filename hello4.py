@@ -103,9 +103,23 @@ if os.path.exists('/Users/kangqijun/testdir1') == False:
 	os.mkdir('/Users/kangqijun/testdir1')
 	print('mk dir success !')
 
+#列出符合条件的文件
+os.chdir(r'/Users/kangqijun')
+for x in os.listdir('/Users/kangqijun'):
+	if os.path.splitext(x)[1] == '.m':
+		print(os.path.abspath(x));
 
+def scandir(path):
+	if os.path.isdir(path):
+		print('dir: ' + path)
+		for x in os.listdir(path):
+			scandir(x)
+	else:
+		print('file:' + path)
+	
 
-
+os.chdir(r'/Users/kangqijun/testdir1')
+scandir('/Users/kangqijun/testdir1')
 
 
 
