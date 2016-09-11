@@ -44,7 +44,7 @@ class Animal(object):
 	"""docstring for Animal"""
 	def run(self):
 		print('Animal is running...')
-	
+
 
 #安装第三方模块  pip3 install Pillow
 # from PIL import Image
@@ -120,7 +120,25 @@ print('AAA.name', AAA.name)
 del a.name
 print('a.name3', a.name)
 print('AAA.name', AAA.name)
-		
+
+#面向对象编程, 使用__slots__
+class Student(object):
+	pass
+
+s = Student()
+s.name = 'michael'
+print(s.name)
+
+def set_age(self, age):
+	self.age = age
+
+from types import MethodType
+s.set_age = MethodType(set_age, s)
+s.set_age(25)
+print(s.age)
+
+def set_score(self, score):
+	self.score = score
 
 
 
