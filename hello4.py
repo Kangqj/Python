@@ -8,12 +8,12 @@
 #IO编程
 
 #读取文本文件，且是utf-8编码格式的文本文件
-try:
-	f = open('/Users/kangqijun/Python/test1.txt', 'r')
-	print('---\n' + f.read())
-finally:
-	if f:
-		f.close()
+# try:
+# 	f = open('/Users/kangqijun/Python/test1.txt', 'r')
+# 	print('---\n' + f.read())
+# finally:
+# 	if f:
+# 		f.close()
 
 with open('/Users/kangqijun/Python/test1.txt', 'r') as f:
 	print('---\n' + f.read())
@@ -121,9 +121,3 @@ def scandir(path):
 
 os.chdir(r'/Users/kangqijun/testdir1')
 scandir('/Users/kangqijun/testdir1')
-
-
-
-
-
-
